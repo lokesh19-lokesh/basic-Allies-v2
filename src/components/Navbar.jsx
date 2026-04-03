@@ -39,10 +39,11 @@ const Navbar = () => {
               Shop <ChevronDown size={14} className="ml-1" />
             </Link>
             <div className="absolute top-full left-0 mt-2 w-48 bg-background-white rounded-xl shadow-premium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-2">
-              <Link to="/shop?category=Watercolor" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Watercolor</Link>
-              <Link to="/shop?category=Acrylic" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Acrylic</Link>
-              <Link to="/shop?category=Sketchbooks" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Sketchbooks</Link>
-              <Link to="/shop?category=Journals" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Journals</Link>
+              <Link to="/shop?category=Set 1" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Set 1</Link>
+              <Link to="/shop?category=Set 2" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Set 2</Link>
+              <Link to="/shop?category=Set 3" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Set 3</Link>
+              <Link to="/shop?category=Set 4" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Set 4</Link>
+              <Link to="/shop?category=Set 5" className="block px-4 py-2 text-sm hover:bg-background rounded-lg">Set 5</Link>
             </div>
           </div>
           <Link to="/shop?filter=new" className="text-sm font-medium hover:text-accent transition-colors">New Arrivals</Link>
@@ -80,10 +81,11 @@ const Navbar = () => {
             <Link to="/" className="text-lg font-medium">Home</Link>
             <Link to="/shop" className="text-lg font-medium">Shop All</Link>
             <div className="pl-4 flex flex-col space-y-2">
-              <Link to="/shop?category=Watercolor" className="text-sm text-primary/70">Watercolor</Link>
-              <Link to="/shop?category=Acrylic" className="text-sm text-primary/70">Acrylic</Link>
-              <Link to="/shop?category=Sketchbooks" className="text-sm text-primary/70">Sketchbooks</Link>
-              <Link to="/shop?category=Journals" className="text-sm text-primary/70">Journals</Link>
+              <Link to="/shop?category=Set 1" className="text-sm text-primary/70">Set 1</Link>
+              <Link to="/shop?category=Set 2" className="text-sm text-primary/70">Set 2</Link>
+              <Link to="/shop?category=Set 3" className="text-sm text-primary/70">Set 3</Link>
+              <Link to="/shop?category=Set 4" className="text-sm text-primary/70">Set 4</Link>
+              <Link to="/shop?category=Set 5" className="text-sm text-primary/70">Set 5</Link>
             </div>
             <Link to="/shop?filter=new" className="text-lg font-medium">New Arrivals</Link>
           </div>

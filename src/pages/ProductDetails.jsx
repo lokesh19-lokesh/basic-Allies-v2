@@ -16,11 +16,8 @@ const ProductDetails = () => {
 
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
 
-  const images = [
-    product.image,
-    "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1586075010620-2255bc4e5a9c?auto=format&fit=crop&q=80&w=800"
+  const images = product.images || [
+    product.image
   ];
 
   const handleAddToCart = () => {
@@ -103,7 +100,7 @@ const ProductDetails = () => {
                 )}
               </div>
 
-              <p className="text-lg text-primary/70 mb-10 leading-relaxed">
+              <p className="text-lg text-primary/70 mb-10 leading-relaxed whitespace-pre-wrap">
                 {product.description}
               </p>
 

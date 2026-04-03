@@ -1,123 +1,103 @@
+const sharedDescription = `What's inside?
+1. 6 Colouring Sheets: Simple, elegant designs for kids and adults alike. Because who doesn't love a good colouring session? 😊
+
+2. 2 Sensory Calming Stickers: Our latest experiment! They might look a little... unusual, but trust us, they're magic. 🌟 Infused with essential oil for a calming effect. Just peel, stick, and breathe in the zen. Pro tip: keep them in the packet when not in use, unless you want your whole house to smell like a spa.
+
+4. Catalog: so you dont have to keep guessing what colour to use. We have it made ready for you.
+
+5. File: Everything is neatly packed in a file for safe delivery. We didn't want anything to get lost in transit... or creased. 😅
+
+Important Note
+Keep the stickers in their packet when not in use, and if you're allergic or sensitive to fragrances, please avoid using them. We don't want any, ahem, "scent-itive" reactions. 🤧
+
+Happy colouring, and don't hesitate to reach out if you need anything! 😊`;
+
+const specsTemplate = {
+  gsm: "Premium",
+  paperType: "High Quality Paper",
+  size: "Standard",
+  pages: "6 Sheets + Extras",
+  texture: "Smooth"
+};
+
 export const products = [
   {
     id: 1,
-    name: "Premium Cotton Sketchbook (A5)",
-    price: 24.00,
-    originalPrice: 30.00,
-    category: "Watercolor",
-    image: "/assets/hero-1.png",
-    description: "Our signature 300 GSM 100% cotton watercolor paper. Perfect for wet-on-wet techniques and layered washes. Features a durable linen hardbound cover.",
-    specs: {
-      gsm: "300 GSM",
-      paperType: "100% Cotton",
-      size: "A5 (14.8 x 21 cm)",
-      pages: "48 Pages",
-      texture: "Cold Pressed"
-    },
+    name: "Colouring Set 1",
+    price: 15.00,
+    originalPrice: 20.00,
+    category: "Set 1",
+    image: "/set1/1.jpeg",
+    images: ["/set1/1.jpeg", "/set1/2.jpeg", "/set1/3.jpeg", "/set1/4.jpeg", "/set1/5.jpeg", "/set1/6.jpeg"],
+    description: sharedDescription,
+    specs: specsTemplate,
     isNew: true,
     isPopular: true,
-    isBestSelling: false,
+    isBestSelling: true,
   },
   {
     id: 2,
-    name: "Linen Cover Journal (A6)",
-    price: 18.00,
-    originalPrice: 22.00,
-    category: "Journals",
-    image: "/assets/cat-watercolor.png",
-    description: "Compact and elegant, this A6 journal features buttery smooth 120 GSM paper, ideal for ink, charcoal, and sketching on the go.",
-    specs: {
-      gsm: "120 GSM",
-      paperType: "Acid-Free Paper",
-      size: "A6 (10.5 x 14.8 cm)",
-      pages: "160 Pages",
-      texture: "Smooth"
-    },
-    isNew: false,
-    isPopular: true,
+    name: "Colouring Set 2",
+    price: 15.00,
+    originalPrice: 20.00,
+    category: "Set 2",
+    image: "/set2/1.jpeg",
+    images: ["/set2/1.jpeg", "/set2/2.jpeg", "/set2/3.jpeg", "/set2/4.jpeg", "/set2/5.jpeg", "/set2/6.jpeg"],
+    description: sharedDescription,
+    specs: specsTemplate,
+    isNew: true,
+    isPopular: false,
     isBestSelling: true,
   },
   {
     id: 3,
-    name: "Heavyweight Acrylic Pad",
+    name: "Colouring Set 3",
     price: 15.00,
-    originalPrice: 18.00,
-    category: "Acrylic",
-    image: "/assets/cat-acrylic.png",
-    description: "Thick textured paper designed specifically for acrylic and oil painting. Prevents buckling and maintains vibrant color accuracy.",
-    specs: {
-      gsm: "400 GSM",
-      paperType: "Cellulose",
-      size: "A4 (21 x 29.7 cm)",
-      pages: "20 Sheets",
-      texture: "Canvas-like"
-    },
-    isNew: true,
-    isPopular: false,
+    originalPrice: 20.00,
+    category: "Set 3",
+    image: "/set3/1.jpeg",
+    images: ["/set3/1.jpeg", "/set3/2.jpeg", "/set3/3.jpeg", "/set3/4.jpeg", "/set3/5.jpeg", "/set3/6.jpeg"],
+    description: sharedDescription,
+    specs: specsTemplate,
+    isNew: false,
+    isPopular: true,
     isBestSelling: false,
   },
   {
     id: 4,
-    name: "Artisanal Sketchbook (Gray)",
-    price: 22.00,
-    originalPrice: 25.00,
-    category: "Sketchbooks",
-    image: "/assets/hero-1.png",
-    description: "Minimalist aesthetic with a soft-touch gray cover. Contains 150 GSM cream-toned paper suitable for all dry media.",
-    specs: {
-      gsm: "150 GSM",
-      paperType: "Cream Paper",
-      size: "Square (20 x 20 cm)",
-      pages: "80 Pages",
-      texture: "Fine Grain"
-    },
-    isNew: false,
-    isPopular: true,
-    isBestSelling: true,
-  },
-  {
-    id: 5,
-    name: "Handmade Deckle Edge Set",
-    price: 32.00,
-    originalPrice: 40.00,
-    category: "Watercolor",
-    image: "/assets/cat-watercolor.png",
-    description: "Traditional handmade paper with natural deckle edges. Provides a unique, organic feel to your watercolor masterpieces.",
-    specs: {
-      gsm: "250 GSM",
-      paperType: "Handmade Cotton",
-      size: "Custom (15 x 15 cm)",
-      pages: "25 Loose Sheets",
-      texture: "Rough"
-    },
+    name: "Colouring Set 4",
+    price: 15.00,
+    originalPrice: 20.00,
+    category: "Set 4",
+    image: "/set4/1.jpeg",
+    images: ["/set4/1.jpeg", "/set4/2.jpeg", "/set4/3.jpeg", "/set4/4.jpeg", "/set4/5.jpeg", "/set4/6.jpeg"],
+    description: sharedDescription,
+    specs: specsTemplate,
     isNew: true,
     isPopular: false,
     isBestSelling: false,
   },
   {
-    id: 6,
-    name: "Vintage Canvas Journal",
-    price: 28.00,
-    originalPrice: 35.00,
-    category: "Journals",
-    image: "/assets/cta-bg.png",
-    description: "Rugged canvas cover with a vintage wash effect. Ideal for mixed media journaling and travel documentation.",
-    specs: {
-      gsm: "180 GSM",
-      paperType: "Mixed Media",
-      size: "B5 (17.6 x 25 cm)",
-      pages: "120 Pages",
-      texture: "Medium Grain"
-    },
+    id: 5,
+    name: "Colouring Set 5",
+    price: 15.00,
+    originalPrice: 20.00,
+    category: "Set 5",
+    image: "/set5/1.jpeg",
+    images: ["/set5/1.jpeg", "/set5/2.jpeg", "/set5/3.jpeg", "/set5/4.jpeg", "/set5/5.jpeg", "/set5/6.jpeg"],
+    description: sharedDescription,
+    specs: specsTemplate,
     isNew: false,
     isPopular: true,
-    isBestSelling: false,
+    isBestSelling: true,
   }
 ];
 
 export const categories = [
-  { name: "Watercolor", image: "/src/assets/cat-watercolor.png" },
-  { name: "Acrylic", image: "/src/assets/cat-acrylic.png" },
-  { name: "Sketchbooks", image: "/src/assets/hero-1.png" },
-  { name: "Journals", image: "/src/assets/cta-bg.png" }
+  { name: "Set 1", image: "/set1/1.jpeg" },
+  { name: "Set 2", image: "/set2/1.jpeg" },
+  { name: "Set 3", image: "/set3/1.jpeg" },
+  { name: "Set 4", image: "/set4/1.jpeg" },
+  { name: "Set 5", image: "/set5/1.jpeg" }
 ];
+
