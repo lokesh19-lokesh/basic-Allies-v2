@@ -14,7 +14,11 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(() => {
     try {
       const savedCart = localStorage.getItem('cart');
-      return savedCart ? JSON.parse(savedCart) : [];
+      if (savedCart) {
+        const parsed = JSON.parse(savedCart);
+        return Array.isArray(parsed) ? parsed : [];
+      }
+      return [];
     } catch (error) {
       console.error("Failed to parse cart from localStorage:", error);
       return [];
@@ -55,8 +59,9 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
-  const cartTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+  const safeCart = Array.isArray(cart) ? cart : [];
+  const cartTotal = safeCart.reduce((total, item) => total + item.price * item.quantity, 0);
+  const cartCount = safeCart.reduce((count, item) => count + item.quantity, 0);
 
   return (
     <CartContext.Provider value={{
