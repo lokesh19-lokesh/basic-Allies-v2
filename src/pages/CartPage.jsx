@@ -71,7 +71,7 @@ const CartPage = () => {
                           {item.category} • Size: {item.selectedSize || 'Standard'}
                         </p>
                       </div>
-                      <span className="text-xl font-bold">${(item.price * item.quantity).toFixed(2)}</span>
+                      <span className="text-xl font-bold">₹{(item.price * item.quantity).toFixed(2)}</span>
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -116,23 +116,23 @@ const CartPage = () => {
               <div className="space-y-6 mb-8 pb-8 border-b border-background text-primary/70">
                 <div className="flex justify-between items-center text-sm font-medium">
                   <span className="uppercase tracking-widest">Subtotal</span>
-                  <span className="font-bold text-primary">${cartTotal.toFixed(2)}</span>
+                  <span className="font-bold text-primary">₹{cartTotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between items-center text-sm font-medium">
                   <span className="uppercase tracking-widest">Shipping</span>
                   <span className="font-bold text-primary">
-                    {shipping === 0 ? <span className="text-accent uppercase tracking-widest">Free</span> : `$${shipping.toFixed(2)}`}
+                    {shipping === 0 ? <span className="text-accent uppercase tracking-widest">Free</span> : `₹${shipping.toFixed(2)}`}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-sm font-medium text-primary/40">
                   <span className="uppercase tracking-widest">Estimated Tax</span>
-                  <span className="font-bold text-primary/60">${tax.toFixed(2)}</span>
+                  <span className="font-bold text-primary/60">₹{tax.toFixed(2)}</span>
                 </div>
               </div>
 
               <div className="flex justify-between items-center text-2xl font-bold mb-10">
                 <span className="tracking-tight">Grand Total</span>
-                <span>${grandTotal.toFixed(2)}</span>
+                <span>₹{grandTotal.toFixed(2)}</span>
               </div>
 
               <button className="w-full py-5 bg-primary text-white font-bold rounded-2xl hover:bg-accent transition-all duration-300 shadow-premium uppercase tracking-widest text-sm flex items-center justify-center space-x-3 mb-6">
@@ -154,7 +154,7 @@ const CartPage = () => {
               {shipping > 0 && (
                 <div className="mt-8 p-4 bg-background rounded-xl border border-background-white shadow-soft">
                   <p className="text-[10px] font-bold uppercase tracking-widest text-primary/40 leading-relaxed text-center">
-                    Add <span className="text-accent">${(100 - cartTotal).toFixed(2)}</span> more to qualify for <span className="text-primary">FREE shipping</span>
+                    Add <span className="text-accent">₹{(100 - cartTotal).toFixed(2)}</span> more to qualify for <span className="text-primary">FREE shipping</span>
                   </p>
                 </div>
               )}

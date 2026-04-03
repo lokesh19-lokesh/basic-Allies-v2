@@ -89,10 +89,10 @@ const ProductDetails = () => {
               </h1>
 
               <div className="flex items-center space-x-4 mb-8">
-                <span className="text-3xl font-bold text-primary">${product.price.toFixed(2)}</span>
+                <span className="text-3xl font-bold text-primary">₹{product.price.toFixed(2)}</span>
                 {discount > 0 && (
                   <>
-                    <span className="text-xl text-primary/30 line-through">${product.originalPrice.toFixed(2)}</span>
+                    <span className="text-xl text-primary/30 line-through">₹{product.originalPrice.toFixed(2)}</span>
                     <span className="bg-accent/10 text-accent text-sm font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                       SAVE {discount}%
                     </span>
@@ -178,7 +178,7 @@ const ProductDetails = () => {
                     className="flex-1 py-4 bg-primary text-white font-bold rounded-xl hover:bg-accent transition-all duration-300 shadow-premium uppercase tracking-widest text-sm flex items-center justify-center space-x-3"
                   >
                     <ShoppingCart size={18} />
-                    <span>Add to Cart — ${(product.price * quantity).toFixed(2)}</span>
+                    <span>Add to Cart — ₹{(product.price * quantity).toFixed(2)}</span>
                   </button>
                 </div>
               </div>
