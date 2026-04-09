@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { products } from '../data/mockData';
+import { products, scents } from '../data/mockData';
 import { useCart } from '../context/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Star, Eye, Share2, Heart, CheckCircle2, Package, Truck, ShieldCheck } from 'lucide-react';
@@ -10,7 +10,7 @@ const ProductDetails = () => {
   const { addToCart } = useCart();
   const product = products.find(p => p.id === parseInt(id)) || products[0];
   
-  const [selectedSize, setSelectedSize] = useState('Rose');
+  const [selectedSize, setSelectedSize] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState(product.image);
 
@@ -21,6 +21,7 @@ const ProductDetails = () => {
   ];
 
   const handleAddToCart = () => {
+    if (!selectedSize) return;
     addToCart({ ...product, selectedSize }, quantity);
   };
 
@@ -141,7 +142,7 @@ const ProductDetails = () => {
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-4">Select Scent</h4>
                   <div className="flex flex-wrap gap-3">
-                    {['Rose', 'lavender', 'jasmine', 'lemon', 'Fruity'].map((size) => (
+                    {scents.map((size) => (
                       <button
                         key={size}
                         onClick={() => setSelectedSize(size)}
@@ -175,10 +176,15 @@ const ProductDetails = () => {
                   </div>
                   <button
                     onClick={handleAddToCart}
-                    className="flex-1 py-4 bg-primary text-white font-bold rounded-xl hover:bg-accent transition-all duration-300 shadow-premium uppercase tracking-widest text-sm flex items-center justify-center space-x-3"
+                    disabled={!selectedSize}
+                    className={`flex-1 py-4 font-bold rounded-xl transition-all duration-300 shadow-premium uppercase tracking-widest text-sm flex items-center justify-center space-x-3 ${
+                      selectedSize 
+                        ? 'bg-primary text-white hover:bg-accent' 
+                        : 'bg-primary/10 text-primary/30 cursor-not-allowed border-2 border-dashed border-primary/20'
+                    }`}
                   >
-                    <ShoppingCart size={18} />
-                    <span>Add to Cart — ₹{(product.price * quantity).toFixed(2)}</span>
+                    {selectedSize ? <ShoppingCart size={18} /> : null}
+                    <span>{selectedSize ? `Add to Cart — ₹${(product.price * quantity).toFixed(2)}` : 'Please Select Scent'}</span>
                   </button>
                 </div>
               </div>

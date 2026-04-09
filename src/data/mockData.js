@@ -12,6 +12,8 @@ Keep the stickers in their packet when not in use, and if you're allergic or sen
 
 Happy colouring, and don't hesitate to reach out if you need anything! 😊`;
 
+export const scents = ['Rose', 'lavender', 'jasmine', 'lemon', 'Fruity'];
+
 const specsTemplate = {
   gsm: "110",
   paperType: "High Quality Paper",

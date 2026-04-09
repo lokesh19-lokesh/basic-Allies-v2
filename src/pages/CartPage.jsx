@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Trash2, ShoppingBag, ArrowRight, Minus, Plus, CreditCard, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Trash2, ShoppingBag, ArrowRight, Minus, Plus, CreditCard, ShieldCheck, CheckCircle2, ShoppingCart } from 'lucide-react';
 import CheckoutModal from '../components/CheckoutModal';
+import { scents } from '../data/mockData';
 
 const CartPage = () => {
-  const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const { cart, removeFromCart, updateQuantity, updateScent, cartTotal } = useCart();
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   const shipping = cartTotal > 100 ? 0 : 15;
   const tax = cartTotal * 0.08;
   const grandTotal = cartTotal + shipping + tax;
+
+  const isCartValid = cart.every(item => scents.includes(item.selectedSize));
 
   if (cart.length === 0) {
     return (
@@ -58,7 +61,11 @@ const CartPage = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
-                  className="flex flex-col sm:flex-row items-center bg-background-white p-6 rounded-2xl shadow-soft group border border-transparent hover:border-accent/10 transition-all"
+                  className={`flex flex-col sm:flex-row items-center bg-background-white p-6 rounded-2xl shadow-soft group border-2 transition-all ${
+                    !scents.includes(item.selectedSize) 
+                      ? 'border-red-500/50 bg-red-500/5' 
+                      : 'border-transparent hover:border-accent/10'
+                  }`}
                 >
                   <Link to={`/product/${item.id}`} className="w-32 h-32 rounded-xl overflow-hidden mb-4 sm:mb-0 sm:mr-8 flex-shrink-0 bg-background">
                     <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform group-hover:scale-110" />
@@ -70,9 +77,26 @@ const CartPage = () => {
                         <Link to={`/product/${item.id}`} className="text-lg font-bold hover:text-accent transition-colors block mb-1">
                           {item.name}
                         </Link>
-                        <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
-                          {item.category} • Scent: {item.selectedSize || 'Standard'}
+                        <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${
+                          !scents.includes(item.selectedSize) ? 'text-red-500' : 'text-primary/40'
+                        }`}>
+                          {item.category} • Scent: {scents.includes(item.selectedSize) ? item.selectedSize : 'Selection Required ⚠️'}
                         </p>
+                        <div className="flex flex-wrap justify-center sm:justify-start gap-1.5 mt-2">
+                          {scents.map((scent) => (
+                            <button
+                              key={scent}
+                              onClick={() => updateScent(item.id, item.selectedSize, scent)}
+                              className={`px-3 py-1 text-[10px] rounded-full border mb-1 transition-all ${
+                                item.selectedSize === scent
+                                  ? 'border-accent bg-accent/5 text-accent font-bold'
+                                  : 'border-background hover:border-accent/30 text-primary/40 hover:text-primary/70'
+                              }`}
+                            >
+                              {scent}
+                            </button>
+                          ))}
+                        </div>
                       </div>
                       <span className="text-xl font-bold">₹{(item.price * item.quantity).toFixed(2)}</span>
                     </div>
@@ -80,21 +104,21 @@ const CartPage = () => {
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                       <div className="flex items-center border border-background rounded-xl p-1 bg-background shadow-inner">
                         <button
-                          onClick={() => updateQuantity(item.id, -1)}
+                          onClick={() => updateQuantity(item.id, item.selectedSize, -1)}
                           className="w-10 h-10 flex items-center justify-center hover:bg-background-white rounded-lg transition-all font-bold"
                         >
                           <Minus size={16} />
                         </button>
                         <span className="w-10 text-center font-bold">{item.quantity}</span>
                         <button
-                          onClick={() => updateQuantity(item.id, 1)}
+                          onClick={() => updateQuantity(item.id, item.selectedSize, 1)}
                           className="w-10 h-10 flex items-center justify-center hover:bg-background-white rounded-lg transition-all font-bold"
                         >
                           <Plus size={16} />
                         </button>
                       </div>
                       <button
-                        onClick={() => removeFromCart(item.id)}
+                        onClick={() => removeFromCart(item.id, item.selectedSize)}
                         className="text-primary/30 hover:text-red-500 transition-colors flex items-center space-x-2 text-xs font-bold uppercase tracking-widest"
                       >
                         <Trash2 size={16} />
@@ -140,10 +164,15 @@ const CartPage = () => {
 
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="w-full py-5 bg-primary text-white font-bold rounded-2xl hover:bg-accent transition-all duration-300 shadow-premium uppercase tracking-widest text-sm flex items-center justify-center space-x-3 mb-6"
+                disabled={!isCartValid}
+                className={`w-full py-5 font-bold rounded-2xl transition-all duration-300 shadow-premium uppercase tracking-widest text-sm flex items-center justify-center space-x-3 mb-6 ${
+                  isCartValid 
+                    ? 'bg-primary text-white hover:bg-accent' 
+                    : 'bg-primary/10 text-primary/30 cursor-not-allowed border-2 border-dashed border-primary/20'
+                }`}
               >
                 <CreditCard size={20} />
-                <span>Secure Checkout</span>
+                <span>{isCartValid ? 'Secure Checkout' : 'Select All Scents'}</span>
               </button>
 
               {/* <div className="space-y-4">
