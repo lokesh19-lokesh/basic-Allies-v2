@@ -68,7 +68,7 @@ const CartPage = () => {
                           {item.name}
                         </Link>
                         <p className="text-xs font-bold uppercase tracking-widest text-primary/40">
-                          {item.category} • Size: {item.selectedSize || 'Standard'}
+                          {item.category} • Scent: {item.selectedSize || 'Standard'}
                         </p>
                       </div>
                       <span className="text-xl font-bold">₹{(item.price * item.quantity).toFixed(2)}</span>

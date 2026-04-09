@@ -10,7 +10,7 @@ const ProductDetails = () => {
   const { addToCart } = useCart();
   const product = products.find(p => p.id === parseInt(id)) || products[0];
   
-  const [selectedSize, setSelectedSize] = useState('A5');
+  const [selectedSize, setSelectedSize] = useState('Rose');
   const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState(product.image);
 
@@ -139,9 +139,9 @@ const ProductDetails = () => {
               {/* Options */}
               <div className="space-y-8 mb-10">
                 <div>
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-4">Select Size</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-4">Select Scent</h4>
                   <div className="flex flex-wrap gap-3">
-                    {['A4', 'A5', 'A6'].map((size) => (
+                    {['Rose', 'lavender', 'jasmine', 'lemon', 'Fruity'].map((size) => (
                       <button
                         key={size}
                         onClick={() => setSelectedSize(size)}

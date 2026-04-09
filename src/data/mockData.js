@@ -13,10 +13,10 @@ Keep the stickers in their packet when not in use, and if you're allergic or sen
 Happy colouring, and don't hesitate to reach out if you need anything! 😊`;
 
 const specsTemplate = {
-  gsm: "Premium",
+  gsm: "110",
   paperType: "High Quality Paper",
   size: "Standard",
-  pages: "6 Sheets + Extras",
+  pages: "Only 6 sheets+ 2 stickers",
   texture: "Smooth"
 };
 
