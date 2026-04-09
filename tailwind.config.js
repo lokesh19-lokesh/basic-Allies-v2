@@ -15,9 +15,10 @@ export default {
           DEFAULT: '#E8AFA6',
           light: '#F5DCD8',
         },
+        white: '#f6e9d1',
         background: {
-          DEFAULT: '#F8F8F8',
-          white: '#FFFFFF',
+          DEFAULT: '#f6e9d1',
+          white: '#f6e9d1',
         },
       },
       borderRadius: {
