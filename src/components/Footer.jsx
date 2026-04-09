@@ -13,7 +13,7 @@ const Footer = () => {
               <img src="/logo.png" alt="Allies Art Supplies Logo" className="h-32 object-contain" />
             </Link>
             <p className="text-primary/70 max-w-xs leading-relaxed">
-              Curating premium art supplies for the modern artist. From professional-grade sketchbooks to artisanal watercolor paper.
+              Basic Allies becomes that quiet bridge between feeling and healing. a tactile reminder to slow down, breathe, and express. aligning seamlessly with The Art of Feeling’s .safe space for emotional release.
             </p>
             <div className="flex items-center space-x-4">
               <span className="text-sm font-bold text-primary/50">Follow @alliesart</span>
@@ -48,9 +48,9 @@ const Footer = () => {
             <h4 className="font-bold text-sm uppercase tracking-wider text-primary/80">Subscribe</h4>
             <p className="text-primary/70 leading-relaxed">Join our mailing list for early access to new arrivals and exclusive offers.</p>
             <div className="relative group">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
+              <input
+                type="email"
+                placeholder="Enter your email"
                 className="w-full bg-background border border-background/50 rounded-xl px-4 py-3 pr-12 focus:outline-none focus:border-accent transition-all"
               />
               <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors shadow-soft">

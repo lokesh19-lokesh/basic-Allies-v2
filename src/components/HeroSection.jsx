@@ -6,11 +6,11 @@ const HeroSection = () => {
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden flex items-center">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
         >
           <source src="/herosection.mp4" type="video/mp4" />
@@ -26,9 +26,9 @@ const HeroSection = () => {
             Unleash Your <br /> Creativity
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-lg">
-            Discover our curated collection of professional-grade art supplies. From artisanal sketchbooks to premium pigments.
+            India’s first sensory-infused mindful colouring kit designed for emotional regulation..
           </p>
-          <Link 
+          <Link
             to="/shop"
             className="inline-flex items-center px-10 py-4 bg-white text-primary font-bold rounded-xl hover:bg-accent hover:text-white transition-all duration-300 shadow-premium uppercase tracking-wider text-sm"
           >
