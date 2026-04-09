@@ -24,7 +24,7 @@ export const products = [
   {
     id: 1,
     name: "Colouring Set 1",
-    price: 15.00,
+    price: 280,
     originalPrice: 20.00,
     category: "Set 1",
     image: "/set1/1.jpeg",
@@ -38,7 +38,7 @@ export const products = [
   {
     id: 2,
     name: "Colouring Set 2",
-    price: 15.00,
+    price: 280,
     originalPrice: 20.00,
     category: "Set 2",
     image: "/set2/1.jpeg",
@@ -52,7 +52,7 @@ export const products = [
   {
     id: 3,
     name: "Colouring Set 3",
-    price: 15.00,
+    price: 280,
     originalPrice: 20.00,
     category: "Set 3",
     image: "/set3/1.jpeg",
@@ -66,7 +66,7 @@ export const products = [
   {
     id: 4,
     name: "Colouring Set 4",
-    price: 15.00,
+    price: 280,
     originalPrice: 20.00,
     category: "Set 4",
     image: "/set4/1.jpeg",
@@ -80,7 +80,7 @@ export const products = [
   {
     id: 5,
     name: "Colouring Set 5",
-    price: 15.00,
+    price: 280,
     originalPrice: 20.00,
     category: "Set 5",
     image: "/set5/1.jpeg",

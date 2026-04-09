@@ -5,9 +5,9 @@ import CategoryCard from '../components/CategoryCard';
 import { products, categories } from '../data/mockData';
 const Home = () => {
   const [activeTab, setActiveTab] = useState('Best Selling');
-  
+
   const newArrivals = products.filter(p => p.isNew);
-  
+
   const filteredProducts = products.filter(p => {
     if (activeTab === 'Best Selling') return p.isBestSelling;
     if (activeTab === 'New') return p.isNew;
@@ -38,14 +38,14 @@ const Home = () => {
       </section>
 
       {/* New Arrivals */}
-      <ProductGrid 
-        products={newArrivals} 
-        title="New Arrivals" 
+      <ProductGrid
+        products={newArrivals}
+        title="New Arrivals"
         subtitle="Freshly crafted supplies to spark your next masterpiece."
       />
 
       {/* Featured Products with Tabs */}
-      <section className="py-20 bg-background-white">
+      {/* <section className="py-20 bg-background-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-8 tracking-tight">Our Favorites</h2>
@@ -74,14 +74,14 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/assets/cta-bg.png" 
-            alt="CTA Background" 
+          <img
+            src="/assets/cta-bg.png"
+            alt="CTA Background"
             className="w-full h-full object-cover grayscale opacity-10"
           />
         </div>
@@ -91,9 +91,9 @@ const Home = () => {
             Join the Allies community and get 15% off your first order. Plus, receive weekly inspiration, tutorials, and early access to new releases.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
+            <input
+              type="email"
+              placeholder="Your email address"
               className="px-6 py-4 rounded-xl bg-background-white border border-background focus:outline-none focus:border-accent w-full sm:w-80 shadow-soft"
             />
             <button className="px-10 py-4 bg-primary text-white font-bold rounded-xl hover:bg-accent transition-all duration-300 shadow-premium uppercase tracking-widest text-sm">
