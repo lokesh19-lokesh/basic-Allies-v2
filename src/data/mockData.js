@@ -18,8 +18,8 @@ const specsTemplate = {
   gsm: "110",
   paperType: "High Quality Paper",
   size: "Standard",
-  pages: "Only 6 sheets+ 2 stickers",
-  texture: "Smooth"
+  pages: "6 sheets+ 2 stickers",
+  texture: "Rough"
 };
 
 export const products = [
