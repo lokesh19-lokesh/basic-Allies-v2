@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trash2, ShoppingBag, ArrowRight, Minus, Plus, CreditCard, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import CheckoutModal from '../components/CheckoutModal';
 
 const CartPage = () => {
   const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const shipping = cartTotal > 100 ? 0 : 15;
   const tax = cartTotal * 0.08;
   const grandTotal = cartTotal + shipping + tax;
@@ -135,7 +138,10 @@ const CartPage = () => {
                 <span>₹{grandTotal.toFixed(2)}</span>
               </div>
 
-              <button className="w-full py-5 bg-primary text-white font-bold rounded-2xl hover:bg-accent transition-all duration-300 shadow-premium uppercase tracking-widest text-sm flex items-center justify-center space-x-3 mb-6">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="w-full py-5 bg-primary text-white font-bold rounded-2xl hover:bg-accent transition-all duration-300 shadow-premium uppercase tracking-widest text-sm flex items-center justify-center space-x-3 mb-6"
+              >
                 <CreditCard size={20} />
                 <span>Secure Checkout</span>
               </button>
@@ -162,6 +168,16 @@ const CartPage = () => {
           </div>
         </div>
       </div>
+
+      <CheckoutModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        cart={cart}
+        cartTotal={cartTotal}
+        grandTotal={grandTotal}
+        shipping={shipping}
+        tax={tax}
+      />
     </div>
   );
 };
