@@ -26,8 +26,8 @@ const CartPage = () => {
             <p className="text-primary/60 mb-10 leading-relaxed">
               Looks like you haven't added any premium art supplies yet. Start your creative journey now!
             </p>
-            <Link 
-              to="/shop" 
+            <Link
+              to="/shop"
               className="inline-flex items-center space-x-3 px-10 py-4 bg-primary text-white font-bold rounded-xl hover:bg-accent transition-all uppercase tracking-widest text-sm shadow-premium"
             >
               <span>Explore Shop</span>
@@ -76,21 +76,21 @@ const CartPage = () => {
 
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                       <div className="flex items-center border border-background rounded-xl p-1 bg-background shadow-inner">
-                        <button 
+                        <button
                           onClick={() => updateQuantity(item.id, -1)}
                           className="w-10 h-10 flex items-center justify-center hover:bg-background-white rounded-lg transition-all font-bold"
                         >
                           <Minus size={16} />
                         </button>
                         <span className="w-10 text-center font-bold">{item.quantity}</span>
-                        <button 
+                        <button
                           onClick={() => updateQuantity(item.id, 1)}
                           className="w-10 h-10 flex items-center justify-center hover:bg-background-white rounded-lg transition-all font-bold"
                         >
                           <Plus size={16} />
                         </button>
                       </div>
-                      <button 
+                      <button
                         onClick={() => removeFromCart(item.id)}
                         className="text-primary/30 hover:text-red-500 transition-colors flex items-center space-x-2 text-xs font-bold uppercase tracking-widest"
                       >
@@ -112,7 +112,7 @@ const CartPage = () => {
               className="bg-background-white p-10 rounded-3xl shadow-premium sticky top-32 border border-accent/5"
             >
               <h3 className="text-2xl font-bold mb-8 tracking-tight">Order Summary</h3>
-              
+
               <div className="space-y-6 mb-8 pb-8 border-b border-background text-primary/70">
                 <div className="flex justify-between items-center text-sm font-medium">
                   <span className="uppercase tracking-widest">Subtotal</span>
@@ -140,7 +140,7 @@ const CartPage = () => {
                 <span>Secure Checkout</span>
               </button>
 
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <div className="flex items-center space-x-3 text-primary/50">
                   <ShieldCheck size={18} className="text-accent flex-shrink-0" />
                   <p className="text-[10px] font-bold uppercase tracking-widest">Secure 256-bit SSL encryption</p>
@@ -149,7 +149,7 @@ const CartPage = () => {
                   <CheckCircle2 size={18} className="text-accent flex-shrink-0" />
                   <p className="text-[10px] font-bold uppercase tracking-widest">14-day premium return policy</p>
                 </div>
-              </div>
+              </div> */}
 
               {shipping > 0 && (
                 <div className="mt-8 p-4 bg-background rounded-xl border border-background-white shadow-soft">

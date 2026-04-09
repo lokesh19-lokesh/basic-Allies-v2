@@ -24,10 +24,11 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="font-bold text-sm uppercase tracking-wider text-primary/80">Shop</h4>
             <ul className="space-y-4">
-              <li><Link to="/shop?category=Watercolor" className="text-primary/70 hover:text-accent transition-colors">Watercolor</Link></li>
-              <li><Link to="/shop?category=Acrylic" className="text-primary/70 hover:text-accent transition-colors">Acrylic</Link></li>
-              <li><Link to="/shop?category=Sketchbooks" className="text-primary/70 hover:text-accent transition-colors">Sketchbooks</Link></li>
-              <li><Link to="/shop?category=Journals" className="text-primary/70 hover:text-accent transition-colors">Journals</Link></li>
+              <li><Link to="/shop?category=Set 1" className="text-primary/70 hover:text-accent transition-colors">Set 1</Link></li>
+              <li><Link to="/shop?category=Set 2" className="text-primary/70 hover:text-accent transition-colors">Set 2</Link></li>
+              <li><Link to="/shop?category=Set 3" className="text-primary/70 hover:text-accent transition-colors">Set 3</Link></li>
+              <li><Link to="/shop?category=Set 4" className="text-primary/70 hover:text-accent transition-colors">Set 4</Link></li>
+              <li><Link to="/shop?category=Set 5" className="text-primary/70 hover:text-accent transition-colors">Set 5</Link></li>
             </ul>
           </div>
 
@@ -60,8 +61,10 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-background flex flex-col md:flex-row justify-between items-center text-sm text-primary/50">
-          <p>© 2024 Allies Art Supplies. All rights reserved.</p>
-          <p className="mt-2 md:mt-0 font-medium">Made with love for artists.</p>
+          <p>© 2026 Allies Art Supplies. All rights reserved.</p>
+          <p className="mt-2 md:mt-0 font-medium">
+            Designed by <a href="https://thepatternscompany.com/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">The Patterns Company</a>
+          </p>
         </div>
       </div>
     </footer>
