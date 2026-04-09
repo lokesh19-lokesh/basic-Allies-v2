@@ -105,36 +105,22 @@ const ProductDetails = () => {
                 {product.description}
               </p>
 
-              {/* Specs Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-10 p-6 bg-background-white rounded-2xl shadow-soft">
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 size={20} className="text-accent" />
-                  <div>
-                    <p className="text-[10px] font-bold text-primary/40 uppercase tracking-widest">GSM</p>
-                    <p className="text-sm font-bold">{product.specs.gsm}</p>
+              {/* Specs Circular Grid */}
+              <div className="flex flex-wrap gap-4 mb-10 p-4 bg-background-white/50 rounded-3xl border border-background-white shadow-premium overflow-hidden justify-center sm:justify-start">
+                {[
+                  { label: "GSM", value: product.specs.gsm },
+                  { label: "Texture", value: product.specs.texture },
+                  { label: "Paper", value: product.specs.paperType },
+                  { label: "Pages", value: product.specs.pages }
+                ].map((spec, i) => (
+                  <div 
+                    key={i} 
+                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-accent/10 bg-background flex flex-col items-center justify-center text-center p-2 hover:border-accent hover:scale-105 transition-all duration-300 shadow-soft"
+                  >
+                    <span className="text-[8px] sm:text-[10px] font-bold text-primary/40 uppercase tracking-widest mb-1">{spec.label}</span>
+                    <span className="text-[10px] sm:text-[11px] font-bold text-primary leading-tight px-1 uppercase">{spec.value}</span>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 size={20} className="text-accent" />
-                  <div>
-                    <p className="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Texture</p>
-                    <p className="text-sm font-bold">{product.specs.texture}</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 size={20} className="text-accent" />
-                  <div>
-                    <p className="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Paper</p>
-                    <p className="text-sm font-bold">{product.specs.paperType}</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle2 size={20} className="text-accent" />
-                  <div>
-                    <p className="text-[10px] font-bold text-primary/40 uppercase tracking-widest">Pages</p>
-                    <p className="text-sm font-bold">{product.specs.pages}</p>
-                  </div>
-                </div>
+                ))}
               </div>
 
               {/* Options */}
