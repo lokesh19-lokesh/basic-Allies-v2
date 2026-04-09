@@ -81,10 +81,9 @@ const Footer = () => {
             <div className="pt-4">
               <h4 className="font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-4">Follow Our Journey</h4>
               <div className="flex items-center space-x-4">
-                <a href="https://instagram.com/allies.artsupplies" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-primary/60 hover:bg-accent hover:text-white transition-all shadow-soft border border-background-white">
+                <a href="https://www.instagram.com/basicallies.com_" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-primary/60 hover:bg-accent hover:text-white transition-all shadow-soft border border-background-white">
                   <Camera size={18} />
                 </a>
-                <span className="text-xs font-bold text-primary/30 uppercase tracking-widest">@alliesart</span>
               </div>
             </div>
           </div>
