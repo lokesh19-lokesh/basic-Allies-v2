@@ -47,6 +47,8 @@ const Navbar = () => {
             </div>
           </div>
           <Link to="/shop?filter=new" className="text-sm font-medium hover:text-accent transition-colors">New Arrivals</Link>
+          <Link to="/about" className="text-sm font-medium hover:text-accent transition-colors">About</Link>
+          <Link to="/contact" className="text-sm font-medium hover:text-accent transition-colors">Contact</Link>
         </div>
 
         {/* Icons */}
@@ -88,6 +90,8 @@ const Navbar = () => {
               <Link to="/shop?category=Set 5" className="text-sm text-primary/70">Set 5</Link>
             </div>
             <Link to="/shop?filter=new" className="text-lg font-medium">New Arrivals</Link>
+            <Link to="/about" className="text-lg font-medium">About</Link>
+            <Link to="/contact" className="text-lg font-medium">Contact</Link>
           </div>
         </div>
       )}

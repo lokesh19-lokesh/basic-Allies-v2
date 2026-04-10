@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import ProductDetails from './pages/ProductDetails';
 import CartPage from './pages/CartPage';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -54,6 +56,8 @@ const App = () => {
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/product/:id" element={<ProductDetails />} />
                 <Route path="/cart" element={<CartPage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<Home />} />
               </Routes>
             </main>
