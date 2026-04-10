@@ -22,9 +22,9 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative group">
               <div className="absolute -inset-4 bg-accent/20 rounded-3xl blur-2xl group-hover:bg-accent/30 transition-all duration-700"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071&auto=format&fit=crop" 
-                alt="Art supplies aesthetic" 
+              <img
+                src="/about-us.png"
+                alt="Art supplies aesthetic"
                 className="relative rounded-2xl shadow-premium w-full aspect-[4/5] object-cover"
               />
             </div>
@@ -64,7 +64,7 @@ const About = () => {
             <h2 className="text-4xl font-bold text-primary mb-4 tracking-tight">Our Philosophy</h2>
             <p className="text-primary/60 max-w-xl mx-auto">We build our foundation on principles that honor both the artist and the earth.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {

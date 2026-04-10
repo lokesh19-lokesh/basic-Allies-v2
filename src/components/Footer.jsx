@@ -9,15 +9,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand & Contact */}
           <div className="space-y-8 lg:col-span-1">
-            <div className="space-y-6">
-              <Link to="/" className="inline-block">
-                <img src="/logo.png" alt="Allies Art Supplies Logo" className="h-24 object-contain" />
-              </Link>
-              <p className="text-primary/70 max-w-xs leading-relaxed text-sm">
-                Basic Allies becomes that quiet bridge between feeling and healing—a tactile reminder to slow down, breathe, and express.
-              </p>
-            </div>
-
             <div className="space-y-4 pt-4 border-t border-background lg:border-none lg:pt-0">
               <h4 className="font-bold text-xs uppercase tracking-widest text-primary/40">Contact Us</h4>
               <div className="space-y-3">
@@ -33,6 +24,22 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+            <div className="space-y-6">
+              <h4 className="font-bold text-xs uppercase tracking-widest text-primary/80">Subscribe</h4>
+              <p className="text-sm text-primary/70 leading-relaxed">Join our mailing list for early access to new arrivals and exclusive offers.</p>
+              <div className="relative group">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full bg-background border border-background/50 rounded-xl px-4 py-3 pr-12 focus:outline-none focus:border-accent transition-all text-sm placeholder:text-primary/30"
+                />
+                <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors shadow-soft">
+                  <ArrowRight size={18} />
+                </button>
+              </div>
+            </div>
+
+
           </div>
 
           {/* Links Group (Side-by-side on Mobile) */}
@@ -64,25 +71,24 @@ const Footer = () => {
           {/* Newsletter & Social */}
           <div className="space-y-8 lg:col-span-1">
             <div className="space-y-6">
-              <h4 className="font-bold text-xs uppercase tracking-widest text-primary/80">Subscribe</h4>
-              <p className="text-sm text-primary/70 leading-relaxed">Join our mailing list for early access to new arrivals and exclusive offers.</p>
-              <div className="relative group">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full bg-background border border-background/50 rounded-xl px-4 py-3 pr-12 focus:outline-none focus:border-accent transition-all text-sm placeholder:text-primary/30"
-                />
-                <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors shadow-soft">
-                  <ArrowRight size={18} />
-                </button>
-              </div>
+              <Link to="/" className="inline-block">
+                <img src="/logo.png" alt="Allies Art Supplies Logo" className="h-24 object-contain" />
+              </Link>
+              <p className="text-primary/70 max-w-xs leading-relaxed text-sm">
+                Basic Allies becomes that quiet bridge between feeling and healing—a tactile reminder to slow down, breathe, and express.
+              </p>
             </div>
 
-            <div className="pt-4">
+
+            <div className="pt-1">
               <h4 className="font-bold text-[10px] uppercase tracking-widest text-primary/40 mb-4">Follow Our Journey</h4>
               <div className="flex items-center space-x-4">
                 <a href="https://www.instagram.com/basicallies.com_" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-primary/60 hover:bg-accent hover:text-white transition-all shadow-soft border border-background-white">
-                  <Camera size={18} />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
                 </a>
               </div>
             </div>
